@@ -1,0 +1,8 @@
+<?php
+
+/*
+ * LANDING PAGE CONSTANTS
+ */
+
+defined('LANDINGPAGE_ASSETS_RELATIVE_PATH') OR define('LANDINGPAGE_ASSETS_RELATIVE_PATH', 'assets/homepage/');
+defined('LANDINGPAGE_ROOT_PATH') OR define('LANDINGPAGE_ROOT_PATH', 'client/landing/');

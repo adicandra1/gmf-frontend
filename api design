@@ -1,0 +1,16 @@
+so this how the api security design looks like:
+
+
+Resources: 	vacancy list & detail => (admin, hrd, user)
+						(detail => (admin, hrd, user)
+						applied, => (admin, hrd, user)
+						accepted, => (admin, hrd, user [could be edited])
+						, 
+						user list => admin, hrd
+						(education, experience, skills, resume),
+
+App level API key: basic app resource = like vacancy and it's details
+
+user api key: personal info resource = like, experience password name username email
+
+hrd api key : hrd specific resource = like, recuitment 
