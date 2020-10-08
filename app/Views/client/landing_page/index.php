@@ -9,16 +9,16 @@
     <meta name="author" content="Free-Template.co" />
     <link rel="shortcut icon" href="ftco-32x32.png">
     
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/custom-bs.css'?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/jquery.fancybox.min.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/bootstrap-select.min.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'fonts/icomoon/style.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'fonts/line-icons/style.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/owl.carousel.min.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/animate.min.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/custom-bs.css'?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/jquery.fancybox.min.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/bootstrap-select.min.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'fonts/icomoon/style.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'fonts/line-icons/style.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/owl.carousel.min.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/animate.min.css' ?>">
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/style.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/style.css' ?>">
   </head>
   <body id="top">
 
@@ -47,38 +47,38 @@
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="site-logo col-6"> 
-            <img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/azmi/abc.png'?>" alt="azmi">
+            <img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/azmi/abc.png'?>" alt="azmi">
           </div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'index'?>" class="nav-link active">Home</a></li>
-              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'about'?>">About</a></li>
-              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'services'?>">Services</a></li>
+              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'index'?>" class="nav-link active">Home</a></li>
+              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'about'?>">About</a></li>
+              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'services'?>">Services</a></li>
               <li class="has-children">
                 <a href="">Pages</a>
                 <ul class="dropdown">
-                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'gallery'?>">Gallery</a></li>
-                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'news'?>">News</a></li>
+                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'gallery'?>">Gallery</a></li>
+                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'news'?>">News</a></li>
                 </ul>
               </li>
               <li class="has-children">
                 <a href="#">Jobs</a>
                 <ul class="dropdown">
-                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'career'?>">Career</a></li>
-                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'login'?>">User Profile</a></li>
+                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'career'?>">Career</a></li>
+                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'login'?>">User Profile</a></li>
                 </ul>
               </li>
-              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'contact'?>">Contact</a></li>
+              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'contact'?>">Contact</a></li>
 
               
-              <li class="d-lg-none"><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'login'?>">Log In</a></li>
+              <li class="d-lg-none"><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'login'?>">Log In</a></li>
             </ul>
           </nav>
           
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
-              <a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'login'?>" class="btn btn-warning border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log In</a>
+              <a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'login'?>" class="btn btn-warning border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log In</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -88,7 +88,7 @@
     </header>
 
     <!-- HOME -->
-    <section class="home-section section-hero fixed overlay bg-image" style="background-image: url('<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/azmi/gmf.jpg'?>');" id="home-section">
+    <section class="home-section section-hero fixed overlay bg-image" style="background-image: url('<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/azmi/gmf.jpg'?>');" id="home-section">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -122,7 +122,7 @@
 
     <!-- #003679; -->
     
-    <section class="py-5 bg-image overlay-primary fixed overlay" id="next" style="background-image: url('<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/azmi/hanggar2.jpeg'?>');">
+    <section class="py-5 bg-image overlay-primary fixed overlay" id="next" style="background-image: url('<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/azmi/hanggar2.jpeg'?>');">
       <div class="container">
         <div class="row mb-6 justify-content-center">
           <div class="col-md-12 text-center">
@@ -139,7 +139,7 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <a data-fancybox data-ratio="2" href="https://vimeo.com/317571768" class="block__96788">
               <!-- <span class="play-icon"><span class="icon-play"></span></span> -->
-              <img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/sq_img_6.jpg'?>" alt="Image" class="img-fluid img-shadow">
+              <img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/sq_img_6.jpg'?>" alt="Image" class="img-fluid img-shadow">
             </a>
           </div>
           <div class="col-lg-5 ml-auto">
@@ -156,7 +156,7 @@
           <div class="col-lg-6 mb-5 mb-lg-0 order-md-2">
             <a data-fancybox data-ratio="2" href="https://vimeo.com/317571768" class="block__96788">
               <span class="play-icon"><span class="icon-play"></span></span>
-              <img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/sq_img_8.jpg'?>" alt="Image" class="img-fluid img-shadow">
+              <img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/sq_img_8.jpg'?>" alt="Image" class="img-fluid img-shadow">
             </a>
           </div>
           <div class="col-lg-5 mr-auto order-md-1  mb-5 mb-lg-0">
@@ -235,20 +235,20 @@
   </div>
 
     <!-- SCRIPTS -->
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/bootstrap.bundle.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/isotope.pkgd.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/stickyfill.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.fancybox.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.easing.1.3.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/bootstrap.bundle.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/isotope.pkgd.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/stickyfill.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.fancybox.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.easing.1.3.js'?>"></script>
     
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.waypoints.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.animateNumber.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/owl.carousel.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.waypoints.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.animateNumber.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/owl.carousel.min.js'?>"></script>
     
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/bootstrap-select.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/bootstrap-select.min.js'?>"></script>
     
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/custom.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/custom.js'?>"></script>
 
      
   </body>

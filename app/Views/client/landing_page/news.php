@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/custom-bs.css'?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/jquery.fancybox.min.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/bootstrap-select.min.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'fonts/icomoon/style.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'fonts/line-icons/style.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/owl.carousel.min.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/animate.min.css' ?>">
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/quill.snow.css'?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/custom-bs.css'?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/jquery.fancybox.min.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/bootstrap-select.min.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'fonts/icomoon/style.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'fonts/line-icons/style.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/owl.carousel.min.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/animate.min.css' ?>">
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/quill.snow.css'?>">
     
 
     <!-- MAIN CSS -->
-    <link rel="stylesheet" href="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'css/style.css' ?>">  
+    <link rel="stylesheet" href="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'css/style.css' ?>">  
   </head>
   <body id="top">
 
@@ -47,37 +47,37 @@
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="site-logo col-6"> 
-          <img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/azmi/abc.png'?>" alt="azmi">
+          <img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/azmi/abc.png'?>" alt="azmi">
           </div>
 
           <nav class="mx-auto site-navigation">
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-            <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'index'?>">Home</a></li>
-              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'about'?>">About</a></li>
-              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'services'?>">Services</a></li>
+            <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'index'?>">Home</a></li>
+              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'about'?>">About</a></li>
+              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'services'?>">Services</a></li>
               <li class="has-children">
               <a href="#" class="nav-link active">Pages</a>
                 <ul class="dropdown">
-                <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'gallery'?>">Gallery</a></li>
-                <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'news'?>" class="nav-link active">News</a></li>
+                <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'gallery'?>">Gallery</a></li>
+                <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'news'?>" class="nav-link active">News</a></li>
                 </ul>
               </li>
               <li class="has-children">
               <a href="#">Jobs</a>
                 <ul class="dropdown">
-                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'career'?>">Career</a></li>
-                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'login'?>">User Profile</a></li>
+                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'career'?>">Career</a></li>
+                  <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'login'?>">User Profile</a></li>
                 </ul>
               </li>
-              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'contact'?>">Contact</a></li>
+              <li><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'contact'?>">Contact</a></li>
 
-              <li class="d-lg-none"><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'login'?>">Log In</a></li>
+              <li class="d-lg-none"><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'login'?>">Log In</a></li>
             </ul>
           </nav>
           
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
-            <a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'login'?>" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log In</a>
+            <a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'login'?>" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Log In</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -87,7 +87,7 @@
     </header>
 
     <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/azmi/hanggar1.jpeg'?>');" id="home-section">
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/azmi/hanggar1.jpeg'?>');" id="home-section">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
@@ -105,32 +105,32 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-6 col-lg-4 mb-5">
-            <a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'blog-single'?>"><img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/sq_img_1.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'blog-single'?>" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
+            <a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'blog-single'?>"><img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/sq_img_1.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
+            <h3><a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'blog-single'?>" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
             <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
           </div>
           <div class="col-md-6 col-lg-4 mb-5">
-            <a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . 'blog-single'?>"><img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/sq_img_2.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
+            <a href="<?= base_url(LANDINGPAGE_ROOT_PATH) . '/' . 'blog-single'?>"><img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/sq_img_2.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
             <h3><a href="blog-single.html" class="text-black">How to Write a Creative Cover Letter</a></h3>
             <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
           </div>
           <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/sq_img_4.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
+            <a href="blog-single.html"><img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/sq_img_4.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
             <h3><a href="blog-single.html" class="text-black">The Right Way to Quit a Job You Started</a></h3>
             <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
           </div>
           <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/sq_img_7.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
+            <a href="blog-single.html"><img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/sq_img_7.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
             <h3><a href="blog-single.html" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
             <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
           </div>
           <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/sq_img_5.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
+            <a href="blog-single.html"><img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/sq_img_5.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
             <h3><a href="blog-single.html" class="text-black">How to Write a Creative Cover Letter</a></h3>
             <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
           </div>
           <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-single.html"><img src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'images/sq_img_6.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
+            <a href="blog-single.html"><img src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/sq_img_6.jpg'?>" alt="Image" class="img-fluid rounded mb-4"></a>
             <h3><a href="blog-single.html" class="text-black">The Right Way to Quit a Job You Started</a></h3>
             <div>April 15, 2019 <span class="mx-2">|</span> <a href="#">2 Comments</a></div>
           </div>
@@ -215,22 +215,22 @@
   </div>
 
     <!-- SCRIPTS -->
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/bootstrap.bundle.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/isotope.pkgd.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/stickyfill.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.fancybox.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.easing.1.3.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/bootstrap.bundle.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/isotope.pkgd.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/stickyfill.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.fancybox.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.easing.1.3.js'?>"></script>
     
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.waypoints.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/jquery.animateNumber.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/owl.carousel.min.js'?>"></script>
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/quill.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.waypoints.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/jquery.animateNumber.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/owl.carousel.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/quill.min.js'?>"></script>
     
     
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/bootstrap-select.min.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/bootstrap-select.min.js'?>"></script>
     
-    <script src="<?= base_url(LANDINGPAGE_ASSETS_RELATIVE_PATH) . 'js/custom.js'?>"></script>
+    <script src="<?= base_url() . LANDINGPAGE_ASSETS_RELATIVE_PATH . 'js/custom.js'?>"></script>
    
    
   </body>
