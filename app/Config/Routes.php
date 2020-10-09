@@ -42,6 +42,11 @@ $routes->group('/portal', [
     //Default route
     $routes->get('', 'Auth::login');
 
+    //Test Controllers
+    $routes->environment('development', function(RouteCollection $routes) {
+        $routes->get('test', 'Test::index');
+    });
+
     // Login/out
     $routes->get('login', 'Auth::login', ['as' => 'login']);
     $routes->post('login', 'Auth::attemptLogin');
