@@ -32,7 +32,21 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Landing::index');
+$routes->group('/', function (RouteCollection $routes) {
+    $routes->get('', 'Landing::index');
+
+    $routes->get('about', 'Landing::about');
+
+    $routes->get('services', 'Landing::services');
+
+    $routes->get('gallery', 'Landing::gallery');
+
+    $routes->get('news', 'Landing::news');
+
+    $routes->get('career', 'Landing::career');
+
+    $routes->get('contact', 'Landing::contact');
+});
 
 
 $routes->group('/portal', [
@@ -44,43 +58,54 @@ $routes->group('/portal', [
 
     //Test Controllers
     $routes->environment('development', function(RouteCollection $routes) {
-        $routes->get('test', 'Test::index');
+        $routes->get('test', 'Test::index', ['as' => RoutesConstant::TEST]);
     });
 
     // Login/out
-    $routes->get('login', 'Auth::login', ['as' => 'login']);
+    $routes->get('login', 'Auth::login', ['as' => RoutesConstant::LOGIN]);
     $routes->post('login', 'Auth::attemptLogin');
-    $routes->get('logout', 'Auth::logout', ['as' => 'logout'] );
+    $routes->get('logout', 'Auth::logout', ['as' => RoutesConstant::LOGOUT] );
 
     // Registration
-    $routes->get('register', 'Auth::register', ['as' => 'register']);
+    $routes->get('register', 'Auth::register', ['as' => RoutesConstant::REGISTER]);
     $routes->post('register', 'Auth::attemptRegister');
 
     // Activation
-    $routes->get('activate-account', 'Auth::activateAccount', ['as' => 'activate-account']);
-    $routes->get('resend-activate-account', 'Auth::resendActivateAccount', ['as' => 'resend-activate-account']);
+    $routes->get('activate-account', 'Auth::activateAccount', ['as' => RoutesConstant::ACTIVATE_ACCOUNT]);
+    $routes->get('resend-activate-account', 'Auth::resendActivateAccount', ['as' => RoutesConstant::RESEND_ACCOUNT_ACTIVATION]);
 
     // Forgot/Resets
-    $routes->get('forgot-password', 'Auth::forgotPassword', ['as' => 'forgot']);
+    $routes->get('forgot-password', 'Auth::forgotPassword', ['as' => RoutesConstant::FORGOT_PASS]);
     $routes->post('forgot-password', 'Auth::attemptForgot');
-    $routes->get('reset-password', 'Auth::resetPassword', ['as' => 'reset-password']);
+    $routes->get('reset-password', 'Auth::resetPassword', ['as' => RoutesConstant::RESET_PASS]);
     $routes->post('reset-password', 'Auth::attemptReset');
 
     //Dashboard
-    $routes->get('dashboard', 'Dashboard::index', ['as' => 'dashboard']);
+    $routes->get('dashboard', 'Dashboard::index', ['as' => RoutesConstant::DASHBOARD]);
 
     //Vacancy
     $routes->group('vacancy', function(RouteCollection $routes) {
         $routes->get('', 'Vacancy::index');
 
-        $routes->get('detail/(:alphanum)', 'Vacancy::detail/$1', ['as' => 'detail']);
+        $routes->get('detail/(:alphanum)', 'Vacancy::detail/$1', ['as' => RoutesConstant::VACANCY_DETAIL]);
     });
 
     //Profile
     $routes->group('profile', function(RouteCollection $routes) {
         $routes->get('', 'Profile::index');
 
-        $routes->get('edit', 'Profile::edit');
+        $routes->get('edit', 'Profile::edit', ['as' => RoutesConstant::PROFILE_EDIT]);
+
+        $routes->get('skill-repo', 'Profile::skillRepo', ['as' => RoutesConstant::PROFILE_SKILL_REPO]);
+
+        $routes->get('download-resume', function() {
+            echo "this route not yet implemented!";
+        }, ['as' => RoutesConstant::PROFILE_DOWNLOAD_RESUME]);
+
+        $routes->get('print-resume', function() {
+            echo "this route not yet implemented!";
+        }, ['as' => RoutesConstant::PROFILE_PRINT_RESUME]);
+
 
         $routes->environment('development', function(RouteCollection $routes) {
             $routes->get('save', 'Profile::save');
@@ -88,7 +113,14 @@ $routes->group('/portal', [
 
         $routes->post('save', 'Profile::save');
     });
+
+    //Settings
+    $routes->get('settings', function() {
+        echo "This route is not yet implemented!";
+    }, ['as' => RoutesConstant::SETTINGS]);
 });
+
+
 
 /**
  * --------------------------------------------------------------------

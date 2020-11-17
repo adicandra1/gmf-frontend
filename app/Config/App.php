@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://frontend.skripsi-azmi.localhost/';
+	public string $baseURL = 'http://frontend.skripsi-azmi.localhost/';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -33,7 +33,7 @@ class App extends BaseConfig
 	| variable so that it is blank.
 	|
 	*/
-	public $indexPage = '';
+	public string $indexPage = '';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ class App extends BaseConfig
 	|
 	| WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 	*/
-	public $uriProtocol = 'REQUEST_URI';
+	public string $uriProtocol = 'REQUEST_URI';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -63,7 +63,7 @@ class App extends BaseConfig
 	| should run under for this request.
 	|
 	*/
-	public $defaultLocale = 'en';
+	public string $defaultLocale = 'en';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -76,7 +76,7 @@ class App extends BaseConfig
 	| If false, no automatic detection will be performed.
 	|
 	*/
-	public $negotiateLocale = false;
+	public bool $negotiateLocale = false;
 
 	/*
 	|--------------------------------------------------------------------------
@@ -88,6 +88,9 @@ class App extends BaseConfig
 	| found, the first locale will be used.
 	|
 	*/
+	/**
+	 * @var string[]
+	 */
 	public $supportedLocales = ['en'];
 
 	/*
@@ -99,7 +102,7 @@ class App extends BaseConfig
 	| dates with the date helper, and can be retrieved through app_timezone()
 	|
 	*/
-	public $appTimezone = 'America/Chicago';
+	public string $appTimezone = 'America/Chicago';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -112,7 +115,7 @@ class App extends BaseConfig
 	| See http://php.net/htmlspecialchars for a list of supported charsets.
 	|
 	*/
-	public $charset = 'UTF-8';
+	public string $charset = 'UTF-8';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -124,7 +127,7 @@ class App extends BaseConfig
 	| secure, the user will be redirected to a secure version of the page
 	| and the HTTP Strict Transport Security header will be set.
 	*/
-	public $forceGlobalSecureRequests = false;
+	public bool $forceGlobalSecureRequests = false;
 
 	/*
 	|--------------------------------------------------------------------------
@@ -181,13 +184,13 @@ class App extends BaseConfig
 	| except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 	|
 	*/
-	public $sessionDriver            = 'CodeIgniter\Session\Handlers\FileHandler';
-	public $sessionCookieName        = 'ci_session';
-	public $sessionExpiration        = 7200;
-	public $sessionSavePath          = WRITEPATH . 'session';
-	public $sessionMatchIP           = false;
-	public $sessionTimeToUpdate      = 300;
-	public $sessionRegenerateDestroy = false;
+	public string $sessionDriver            = 'CodeIgniter\Session\Handlers\FileHandler';
+	public string $sessionCookieName        = 'ci_session';
+	public int $sessionExpiration        = 7200;
+	public string $sessionSavePath          = WRITEPATH . 'session';
+	public bool $sessionMatchIP           = false;
+	public int $sessionTimeToUpdate      = 300;
+	public bool $sessionRegenerateDestroy = false;
 
 	/*
 	|--------------------------------------------------------------------------
@@ -204,11 +207,11 @@ class App extends BaseConfig
 	|       'cookie_httponly') will also affect sessions.
 	|
 	*/
-	public $cookiePrefix   = '';
-	public $cookieDomain   = '';
-	public $cookiePath     = '/';
-	public $cookieSecure   = false;
-	public $cookieHTTPOnly = false;
+	public string $cookiePrefix   = '';
+	public string $cookieDomain   = '';
+	public string $cookiePath     = '/';
+	public bool $cookieSecure   = false;
+	public bool $cookieHTTPOnly = false;
 
 	/*
 	|--------------------------------------------------------------------------
@@ -226,7 +229,8 @@ class App extends BaseConfig
 	| Comma-separated:	'10.0.1.200,192.168.5.0/24'
 	| Array:		array('10.0.1.200', '192.168.5.0/24')
 	*/
-	public $proxyIPs = '';
+	/** @var string[] */
+	public $proxyIPs = array('');
 
 	/*
 	|--------------------------------------------------------------------------
@@ -243,12 +247,12 @@ class App extends BaseConfig
 	| CSRFRegenerate  = Regenerate token on every submission
 	| CSRFRedirect    = Redirect to previous page with error on failure
 	*/
-	public $CSRFTokenName  = 'csrf_test_name';
-	public $CSRFHeaderName = 'X-CSRF-TOKEN';
-	public $CSRFCookieName = 'csrf_cookie_name';
-	public $CSRFExpire     = 7200;
-	public $CSRFRegenerate = true;
-	public $CSRFRedirect   = true;
+	public string $CSRFTokenName  = 'csrf_test_name';
+	public string $CSRFHeaderName = 'X-CSRF-TOKEN';
+	public string $CSRFCookieName = 'csrf_cookie_name';
+	public int $CSRFExpire     = 7200;
+	public bool $CSRFRegenerate = true;
+	public bool $CSRFRedirect   = true;
 
 	/*
 	|--------------------------------------------------------------------------
@@ -264,5 +268,5 @@ class App extends BaseConfig
 	|   - http://www.html5rocks.com/en/tutorials/security/content-security-policy/
 	|   - http://www.w3.org/TR/CSP/
 	*/
-	public $CSPEnabled = false;
+	public bool $CSPEnabled = false;
 }

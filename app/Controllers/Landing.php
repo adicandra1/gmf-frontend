@@ -1,13 +1,15 @@
 <?php
 namespace App\Controllers;
 
+use App\Libraries\TemplateEngine;
 use CodeIgniter\Controller;
 use App\Models;
+use App\Views\LandingPage;
 
 class Landing extends Controller
 {
 
-    private $model;
+    private Models\Landing\Career $model;
 
     public function __construct()
     {
@@ -15,39 +17,39 @@ class Landing extends Controller
         helper('view');
     }
 
-    public function index()
+    public function index() : string
 	{
-        return view('client/landing_page/index');
+        return TemplateEngine::view(new LandingPage\Home());
     }
 
-    public function about()
+    public function about() : string
     {
-        return view('client/landing_page/about');
+        return TemplateEngine::view(new LandingPage\About());
     }
     
-    public function services()
+    public function services() : string
     {
-        return view('client/landing_page/services');
+        return TemplateEngine::view(new LandingPage\Services());
     }
 
-    public function career()
+    public function career() : string
     {
         $data['vacancy'] = $this->model->get();
-        return view('client/landing_page/career', $data);
+        return TemplateEngine::view(new LandingPage\Career($data['vacancy']));
     }
 
-    public function contact()
+    public function contact() : string
     {
-        return view('client/landing_page/contact');
+        return TemplateEngine::view(new LandingPage\Contact());
     }
 
-    public function gallery()
+    public function gallery() : string
     {
-        return view('client/landing_page/gallery');
+        return TemplateEngine::view(new LandingPage\Gallery());
     }
 
-    public function news()
+    public function news() : string
     {
-        return view('client/landing_page/news');
+        return TemplateEngine::view(new LandingPage\News());
     }
 }

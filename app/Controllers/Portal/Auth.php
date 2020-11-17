@@ -8,6 +8,7 @@ use Myth\Auth\Config\Auth as ConfigAuth;
 use Myth\Auth\Entities\User;
 use Myth\Auth\Models\UserModel;
 
+/** @psalm-suppress PropertyNotSetInConstructor */
 class Auth extends Controller {
 
     /**
@@ -63,7 +64,7 @@ class Auth extends Controller {
         // Set a return URL if none is specified
         //$_SESSION['redirect_url'] = session('redirect_url') ?? previous_url() ?? $this->config->defaultHome;
         //login
-        return view('client/portal/login', ['title' => 'Login']);
+        return view('Client/Portal/login', ['title' => 'Login']);
     }
 
     /**
@@ -145,7 +146,7 @@ class Auth extends Controller {
 			return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
         }
         
-        return view('client/portal/register', ['title' => 'Register']);
+        return view('Client/Portal/register', ['title' => 'Register']);
     }
 
     /**

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<psalm
+    totallyTyped="false"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config"
+    errorBaseline="psalm-baseline.xml"
+    loadXdebugStub="true"
+    autoloader="psalm-bootstrap.php"
+>
+    <projectFiles>
+        <directory name="app" />
+        <ignoreFiles>
+            <directory name="vendor" />
+            <directory name="writable" />
+        </ignoreFiles>
+    </projectFiles>
+
+
+
+    <issueHandlers>
+        <LessSpecificReturnType errorLevel="info" />
+
+        <PropertyNotSetInConstructor>
+            <errorLevel type="suppress">
+                <directory name="app/Controllers" /> <!-- all PropertyNotSetInConstructor issues in this directory are suppressed -->
+            </errorLevel>
+        </PropertyNotSetInConstructor>
+    </issueHandlers>
+</psalm>

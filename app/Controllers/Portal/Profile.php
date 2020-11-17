@@ -2,26 +2,44 @@
 
 namespace App\Controllers\Portal;
 
+use App\Entities\Typing\User;
+use App\Helpers\Auth;
+use App\Libraries\TemplateEngine;
+use App\Models\Portal\Profile as ProfileModel;
+use App\Views\Client\Portal\Profile\Edit\Index as EditView;
+use App\Views\Client\Portal\Profile\Index as ProfileView;
+use App\Views\Client\Portal\Profile\Index;
 use CodeIgniter\Controller;
+use CodeIgniter\Validation\Validation;
 use Config\Services;
 
+/** @psalm-suppress PropertyNotSetInConstructor*/
 class Profile extends Controller {
 
-    private $validation;
+    private Validation $validation;
+
+    private ProfileModel $model;
 
     public function __construct()
     {
         helper(['view', 'form', 'auth']);
 
+        $this->model = new ProfileModel();
+
         $this->validation =  Services::validation();
     }
 
-    public function index()
+    public function index() : string
     {
 
         
 
-        return view('client/portal/profile/index', ['title' => 'Name (username)']);
+        return TemplateEngine::view(
+            new Index(
+                null,
+                new User(Auth::user())
+            )
+        );
     }
 
     public function edit() {
@@ -85,7 +103,23 @@ class Profile extends Controller {
                 'formFields' => $uploadedFilesFormFields
             ]
         ];
-        return view('client/portal/profile/edit/index', $data);
+        return TemplateEngine::view(
+            new EditView(
+                new User(user())
+            )
+        );
+    }
+
+    public function skillRepo() : void
+    {
+        if(isset($_GET['search'])) {
+            $keyword = $_GET['search'];
+            $data = $this->model->skillRepo($keyword);
+
+            $this->response->setStatusCode(200)
+                    ->setJSON($data)
+                    ->send();
+        }
     }
 
     private function restructureValidationErrors(array $errors) : array {
@@ -118,7 +152,8 @@ class Profile extends Controller {
         return $proccessedData;
     }
 
-    public function save() {
+    public function save() : void
+    {
         //process the submitted data
         if(isset($_POST) || isset($_FILES)) {
 
@@ -230,6 +265,24 @@ class Profile extends Controller {
         //fail and success follow HTTP protocol standard
 
         //return format in JSON.
+    }
+
+    public function downloadResume() : void
+    {
+        //is logged in && is authorized: DONE IN AUTH FILTER: see Config\Routes.php
+
+        //parse downloadChoice
+        if(isset($_POST)) {
+            $dataSelected = $_POST['dataSelected'];
+            $downloadMethod = $_POST['downloadMethodRadios'];
+
+            if($downloadMethod == ProfileView::DOWNLOAD_RESUME_PDF) {
+                //compile PDF
+            } elseif ($downloadMethod == ProfileView::DOWNLOAD_RESUME_IN_ZIP) {
+                //prepare ZIP
+            }
+        }
+
     }
 
 }

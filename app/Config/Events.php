@@ -50,3 +50,7 @@ Events::on('pre_system', function () {
 		Services::toolbar()->respond();
 	}
 });
+
+Events::on('updateNotif', function() {
+	echo "test notif";
+});

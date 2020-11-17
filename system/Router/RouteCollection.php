@@ -39,6 +39,7 @@
 
 namespace CodeIgniter\Router;
 
+use Closure;
 use CodeIgniter\Autoloader\FileLocator;
 use CodeIgniter\HTTP\Request;
 use CodeIgniter\Router\Exceptions\RouterException;
@@ -726,7 +727,7 @@ class RouteCollection implements RouteCollectionInterface
 	 *     });
 	 *
 	 * @param string $name      The name to group/prefix the routes with.
-	 * @param array  ...$params
+	 * @param array|Closure  ...$params
 	 *
 	 * @return void
 	 */
@@ -1032,7 +1033,7 @@ class RouteCollection implements RouteCollectionInterface
 	 * Specifies a route that is only available to GET requests.
 	 *
 	 * @param string       $from
-	 * @param string|array $to
+	 * @param string|array|Closure $to
 	 * @param array|null   $options
 	 *
 	 * @return \CodeIgniter\Router\RouteCollectionInterface

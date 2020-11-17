@@ -2,8 +2,14 @@
 
 namespace App\Controllers\Portal;
 
+use App\Entities\Typing\User;
+use App\Entities\Typing\Vacancy as VacancyData;
+use App\Helpers\Auth;
+use App\Libraries\TemplateEngine;
 use CodeIgniter\Controller;
 use App\Models;
+use App\Views\Client\Portal\Vacancy as PortalVacancy;
+use App\Views\Client\Portal\VacancyDetail;
 
 
 class Vacancy extends Controller {
@@ -16,28 +22,32 @@ class Vacancy extends Controller {
         helper('view');
     }
 
-    public function index()
+    public function index() : string 
     {
-        $data['vacancy'] = $this->model->get();
-        $data['title'] = "Vacancy List";
-        return view('client/portal/vacancy', $data);
+
+        return TemplateEngine::view(
+            new PortalVacancy(
+                "Vacancy List",
+                new User(Auth::user()),
+                $this->model->get()
+            )
+        );
+
     }
 
-    public function detail($vacancyId) {
-        return view('client/portal/vacancy-detail', ['title' => 'Job Name Placeholder']);
+    public function detail(string $vacancyId) : string {
+        return TemplateEngine::view(
+            new VacancyDetail(
+                VacancyData::withMockData(),
+                new User(Auth::user())
+            )
+        );
+        //return view('client/portal/vacancy-detail', ['title' => 'Job Name Placeholder']);
     }
 
-    public function test() {
+    public function test() : void {
         $ret = $this->model->get();
-       print_r($ret);
-
+        print_r($ret);
     }
-
-    /*
-    function implicitFakeCast($myClass): \CodeIgniter\HTTP\Response
-    {
-        return $myClass;
-    }
-    */
 
 }

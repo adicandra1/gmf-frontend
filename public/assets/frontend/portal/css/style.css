@@ -22555,7 +22555,7 @@ dl li {
 @media (max-width: 991.98px) {
   .horizontal-menu .bottom-navbar .page-navigation > .nav-item {
     display: block;
-    width: 100%;
+    /* width: 100%; */
     border-right: none;
   }
 }

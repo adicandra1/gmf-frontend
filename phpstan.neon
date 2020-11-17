@@ -1,0 +1,4 @@
+parameters:
+    bootstrapFiles:
+        - 'phpstan-bootstrap.php'
+        - app/Helpers/view_helper.php

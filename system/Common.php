@@ -704,7 +704,7 @@ if (! function_exists('lang'))
 	 * A convenience method to translate a string or array of them and format
 	 * the result with the intl extension's MessageFormatter.
 	 *
-	 * @param string|[] $line
+	 * @param string|array $line
 	 * @param array     $args
 	 * @param string    $locale
 	 *
