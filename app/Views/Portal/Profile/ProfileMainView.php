@@ -1,13 +1,13 @@
-<?php namespace App\Views\Client\Portal\Profile;
+<?php namespace App\Views\Portal\Profile;
 
 use App\Entities\Typing\User;
 use App\Libraries\TemplateEngine;
-use App\Views\Client\Portal\AppShell;
-use App\Views\Client\Portal\Profile\Edit\EditViewConstants;
-use App\Views\Client\Portal\Profile\Partials\NoDataView;
+use App\Views\Portal\AppShell;
+use App\Views\Portal\Profile\Edit\EditViewConstants;
+use App\Views\Portal\Profile\Partials\NoDataView;
 use Config\RoutesConstant;
 
-class Index extends AppShell {
+class ProfileMainView extends AppShell {
 
     protected User $user;
 

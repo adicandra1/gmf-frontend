@@ -2,6 +2,9 @@
 
 namespace App\Controllers\Portal;
 
+use App\Libraries\TemplateEngine;
+use App\Views\Portal\LoginPage;
+use App\Views\Portal\RegisterPage;
 use CodeIgniter\Controller;
 use Myth\Auth\Authentication\LocalAuthenticator;
 use Myth\Auth\Config\Auth as ConfigAuth;
@@ -64,7 +67,7 @@ class Auth extends Controller {
         // Set a return URL if none is specified
         //$_SESSION['redirect_url'] = session('redirect_url') ?? previous_url() ?? $this->config->defaultHome;
         //login
-        return view('Client/Portal/login', ['title' => 'Login']);
+        return TemplateEngine::view(new LoginPage());
     }
 
     /**
@@ -146,7 +149,7 @@ class Auth extends Controller {
 			return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
         }
         
-        return view('Client/Portal/register', ['title' => 'Register']);
+        return TemplateEngine::view(new RegisterPage());
     }
 
     /**

@@ -18,7 +18,7 @@ class Navbar extends BaseView
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="site-logo col-6">
-                        <img src="<?= base_url(ViewHelper::LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/azmi/abc.png') ?>" alt="azmi">
+                        <img src="<?= base_url(ViewHelper::LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/azmi/logo_white.svg') ?>" alt="logo" style="width: 170px; height: 60px;">
                     </div>
 
                     <nav class="mx-auto site-navigation">

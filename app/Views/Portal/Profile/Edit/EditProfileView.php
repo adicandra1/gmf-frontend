@@ -1,16 +1,16 @@
-<?php namespace App\Views\Client\Portal\Profile\Edit;
+<?php namespace App\Views\Portal\Profile\Edit;
 
 use App\Entities\Typing\Skill;
 use App\Entities\Typing\User;
 use App\Libraries\TemplateEngine;
-use App\Views\Client\Portal\AppShell;
-use App\Views\Client\Portal\Profile\Edit\AboutMe as AboutMeEditView;
-use App\Views\Client\Portal\Profile\Edit\Experience as ExperienceEditView;
-use App\Views\Client\Portal\Profile\Edit\Education as EducationEditView;
-use App\Views\Client\Portal\Profile\Edit\Skills as SkillsEditView;
-use App\Views\Client\Portal\Profile\Edit\AdditionalFiles as AdditionalFilesEditView;
+use App\Views\Portal\AppShell;
+use App\Views\Portal\Profile\Edit\AboutMe as AboutMeEditView;
+use App\Views\Portal\Profile\Edit\Experience as ExperienceEditView;
+use App\Views\Portal\Profile\Edit\Education as EducationEditView;
+use App\Views\Portal\Profile\Edit\Skills as SkillsEditView;
+use App\Views\Portal\Profile\Edit\AdditionalFiles as AdditionalFilesEditView;
 
-class Index extends AppShell {
+class EditProfileView extends AppShell {
 
     public function __construct(User $user)
     {

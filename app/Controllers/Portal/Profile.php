@@ -6,9 +6,8 @@ use App\Entities\Typing\User;
 use App\Helpers\Auth;
 use App\Libraries\TemplateEngine;
 use App\Models\Portal\Profile as ProfileModel;
-use App\Views\Client\Portal\Profile\Edit\Index as EditView;
-use App\Views\Client\Portal\Profile\Index as ProfileView;
-use App\Views\Client\Portal\Profile\Index;
+use App\Views\Portal\Profile\Edit\EditProfileView as EditView;
+use App\Views\Portal\Profile\ProfileMainView as ProfileView;
 use CodeIgniter\Controller;
 use CodeIgniter\Validation\Validation;
 use Config\Services;
@@ -35,7 +34,7 @@ class Profile extends Controller {
         
 
         return TemplateEngine::view(
-            new Index(
+            new ProfileView(
                 null,
                 new User(Auth::user())
             )

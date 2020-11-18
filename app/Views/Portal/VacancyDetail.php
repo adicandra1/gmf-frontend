@@ -1,4 +1,4 @@
-<?php namespace App\Views\Client\Portal;
+<?php namespace App\Views\Portal;
 
 use App\Entities\Typing\User;
 use App\Entities\Typing\Vacancy;

@@ -1,4 +1,4 @@
-<?php namespace App\Views\Client\Portal\Partials;
+<?php namespace App\Views\Portal\Partials;
 
 use App\Entities\Typing\User;
 use App\Libraries\BaseView;

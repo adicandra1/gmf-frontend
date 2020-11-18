@@ -8,8 +8,8 @@ use App\Helpers\Auth;
 use App\Libraries\TemplateEngine;
 use CodeIgniter\Controller;
 use App\Models;
-use App\Views\Client\Portal\Vacancy as PortalVacancy;
-use App\Views\Client\Portal\VacancyDetail;
+use App\Views\Portal\Vacancy as PortalVacancy;
+use App\Views\Portal\VacancyDetail;
 
 
 class Vacancy extends Controller {

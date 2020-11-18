@@ -1,4 +1,4 @@
-<?php namespace App\Views\Client\Portal\Profile\Partials;
+<?php namespace App\Views\Portal\Profile\Partials;
 
 use App\Libraries\BaseView;
 

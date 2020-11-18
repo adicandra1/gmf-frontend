@@ -1,4 +1,4 @@
-<?php namespace App\Views\Client\Portal\Profile\Edit;
+<?php namespace App\Views\Portal\Profile\Edit;
 
 use App\Libraries\BaseView;
 

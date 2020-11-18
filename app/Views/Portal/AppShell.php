@@ -1,10 +1,10 @@
-<?php namespace App\Views\Client\Portal;
+<?php namespace App\Views\Portal;
 
 use App\Entities\Typing\User;
 use App\Libraries\BaseView;
 use App\Libraries\TemplateEngine;
-use App\Views\Client\Portal\Partials\HeadHTML;
-use App\Views\Client\Portal\Partials\HorizontalNavbar;
+use App\Views\Portal\Partials\HeadHTML;
+use App\Views\Portal\Partials\HorizontalNavbar;
 use App\Views\ViewHelper;
 
 class AppShell extends BaseView {
