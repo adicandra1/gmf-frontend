@@ -1,79 +1,87 @@
 Bare Minimum Functionality:
 
-  Dashboard:
-    ☐ Welcome Screen (complete registration)
-    ☐ Pending Vacancy (if exist)
-    ☐ Vacancy List Summary (with More.. link)
+  LandingPage:
+    Career:
+      ☐ Search Job
+      ☐ Vacancy details
+
+  Portal:
+    Dashboard:
+      ☐ Welcome Screen (complete registration)
+      ☐ Pending Vacancy (if exist)
+      ☐ Vacancy List Summary (with More.. link)
+      
+    Vacancy:
+      List:
+        ✔ Show @done(20-11-02 21:15)
+        ☐ Search
+        ☐ Tags
+
+      Details:
+      ☐ Apply (require submited necesary details: ktp dll)
+      ☐ Database structure
+      ☐ Provide with data
+
+    Profile:
+      Resume:
+        ☐ Show
+        ✔ Fix mobile view @started(20-11-16 05:04) @done(20-11-16 05:19) @lasted(15m35s)
+        ✔ Mobile view: nav resize @done(20-11-16 05:30)
+        ✔ Mobile view: weird size tabbar @done(20-11-16 14:33)
+        ☐ Use collapsible to show resume files @5m
+        ✔ Button add when no data provided @done(20-11-15 22:03)
+        ☐ Print button functionality
+        Print:
+          With dialog: 
+          ☐ Pdf layout
+          ☐ Choose which data to print (resume, ktp, cv, dll)
+          ☐ compiled pdf (same as print functionality, same redirect), or separate files in zip
+        Edit:
+          ✔ Keep showing form (with empty input) when no data provided @10m @done(20-11-05 19:26)
+          ☐ Datepicker format fix
+          Multiple form:
+            ✔ Show (with template?) @10m @done(20-11-16 14:34)
+            ☐ Submit/transfer data to server (with array symbol: [] ?) @10m
+          ✔ Multi step no disabled step @20m @done(20-11-15 10:51)
+          ✔ Use collapsible instead of accordion @10m @done(20-11-07 09:30)
+
+          Basic Info:
+            ✔ Single @done(20-11-03 08:30)
+            ☐ To database
+          Experience:
+            ✔ Single @done(20-11-03 08:32)
+            ✔ Multiple @done(20-11-15 10:51)
+            ☐ To database
+          Education:
+            ✔ Single @done(20-11-03 17:34)
+            ☐ Multiple
+            ☐ To database
+          Skills:
+            ✔ Database skill list @done(20-11-03 17:35)
+            ✔ Text area skill list @done(20-11-16 18:02)
+            ☐ Save
+            ☐ To database
+          Files:
+            ✔ Single @done(20-11-03 17:34)
+            ☐ To database
+
+    Setting:
+      ☐ Basic info
+      ☐ Dark mode (optional)
+      ☐ Collapse mode: expand or always collapse
+
     
-  Vacancy:
-    List:
-      ✔ Show @done(20-11-02 21:15)
-      ☐ Search
-      ☐ Tags
-
-    Details:
-    ☐ Apply (require submited necesary details: ktp dll)
-    ☐ Database structure
-    ☐ Provide with data
-
-  Profile:
-    Resume:
-      ☐ Show
-      ✔ Fix mobile view @started(20-11-16 05:04) @done(20-11-16 05:19) @lasted(15m35s)
-      ✔ Mobile view: nav resize @done(20-11-16 05:30)
-      ✔ Mobile view: weird size tabbar @done(20-11-16 14:33)
-      ☐ Use collapsible to show resume files @5m
-      ✔ Button add when no data provided @done(20-11-15 22:03)
-      ☐ Print button functionality
-      Print:
-        With dialog: 
-        ☐ Pdf layout
-        ☐ Choose which data to print (resume, ktp, cv, dll)
-        ☐ compiled pdf (same as print functionality, same redirect), or separate files in zip
-      Edit:
-        ✔ Keep showing form (with empty input) when no data provided @10m @done(20-11-05 19:26)
-        ☐ Datepicker format fix
-        Multiple form:
-          ✔ Show (with template?) @10m @done(20-11-16 14:34)
-          ☐ Submit/transfer data to server (with array symbol: [] ?) @10m
-        ✔ Multi step no disabled step @20m @done(20-11-15 10:51)
-        ✔ Use collapsible instead of accordion @10m @done(20-11-07 09:30)
-
-         Basic Info:
-          ✔ Single @done(20-11-03 08:30)
-          ☐ To database
-        Experience:
-          ✔ Single @done(20-11-03 08:32)
-          ✔ Multiple @done(20-11-15 10:51)
-          ☐ To database
-        Education:
-          ✔ Single @done(20-11-03 17:34)
-          ☐ Multiple
-          ☐ To database
-        Skills:
-          ✔ Database skill list @done(20-11-03 17:35)
-          ✔ Text area skill list @done(20-11-16 18:02)
-          ☐ Save
-          ☐ To database
-        Files:
-          ✔ Single @done(20-11-03 17:34)
-          ☐ To database
-
-  Setting:
-    ☐ Basic info
-    ☐ Dark mode (optional)
-    ☐ Collapse mode: expand or always collapse
-
-  
-  Notification:
-    ✔ UI @done(20-11-03 08:28)
-    ☐ Integrate with UI
-    ☐ Vacancy status (accepted, pending, rejected).
-    ☐ Email integration
-    ☐ When job vacancy added, notification to HQ
-    
-  Login:
-    ✔ Normal login. @done(20-11-02 21:14)
-
-  Register:
-    ☐ quick style: username, email, and password.
+    Notification:
+      ✔ UI @done(20-11-03 08:28)
+      ☐ Integrate with UI
+      ☐ Vacancy status (accepted, pending, rejected).
+      ☐ Email integration
+      ☐ When job vacancy added, notification to HQ
+      
+    Login:
+      ✔ Normal login. @done(20-11-02 21:14)
+      ☐ Keep sign in
+      ☐ Remove social sign in
+    Register:
+      ☐ quick style: username, email, and password.
+      ☐ Terms & Condition
