@@ -81,7 +81,7 @@ Bare Minimum Functionality:
     Login:
       ✔ Normal login. @done(20-11-02 21:14)
       ☐ Keep sign in
-      ☐ Remove social sign in
+      ✔ Remove social sign in @done(20-11-20 05:32)
     Register:
       ☐ quick style: username, email, and password.
       ☐ Terms & Condition
