@@ -9,12 +9,14 @@ class RoutesConstant {
     const FORGOT_PASS = 'forgot';
     const RESET_PASS = 'reset-password';
     const DASHBOARD = 'dashboard';
+    const PROFILE = 'profile';
     const PROFILE_EDIT = 'edit-profile';
     const PROFILE_SKILL_REPO = 'skill-repo';
     const PROFILE_DOWNLOAD_RESUME = 'download-resume';
     const PROFILE_PRINT_RESUME = 'print-resume';
     const SETTINGS = "settings";
 
+    const VACANCY = 'vacancy';
     const VACANCY_DETAIL = 'detail';
 
 

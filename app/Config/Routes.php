@@ -85,14 +85,14 @@ $routes->group('/portal', [
 
     //Vacancy
     $routes->group('vacancy', function(RouteCollection $routes) {
-        $routes->get('', 'Vacancy::index');
+        $routes->get('', 'Vacancy::index', ['as' => RoutesConstant::VACANCY]);
 
         $routes->get('detail/(:alphanum)', 'Vacancy::detail/$1', ['as' => RoutesConstant::VACANCY_DETAIL]);
     });
 
     //Profile
     $routes->group('profile', function(RouteCollection $routes) {
-        $routes->get('', 'Profile::index');
+        $routes->get('', 'Profile::index', ['as' => RoutesConstant::PROFILE]);
 
         $routes->get('edit', 'Profile::edit', ['as' => RoutesConstant::PROFILE_EDIT]);
 
