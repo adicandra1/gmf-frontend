@@ -1,10 +1,12 @@
 <?php namespace App\Views\Portal;
 
 use App\Entities\Typing\User;
+use App\Libraries\TemplateEngine;
+use App\Views\Portal\Partials\VacancyList;
 
 class Vacancy extends AppShell {
 
-    private $vacancy;
+    private array $vacancy;
 
     public function __construct(string $htmlTitle, User $user, array $vacancy)
     {
@@ -17,38 +19,7 @@ class Vacancy extends AppShell {
         $this->startHtmlParsing(); ?>
 
             <div class="container">
-                <ul class="job-listings mb-5">
-
-                    <?php foreach ($this->vacancy as $vacancyItem) : ?>
-                        <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-
-                            <a class="primary" href="<?= route_to('detail', $vacancyItem['id']) ?>"></a>
-
-
-                            <div class="job-listing-logo">
-                                <img src="<?= $vacancyItem['image'] ?>" alt="Image" class="img-fluid">
-                            </div>
-
-                            <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-                                <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
-                                    <h2><?= $vacancyItem['profession'] ?></h2>
-                                    <strong><?= $vacancyItem['company'] ?></strong>
-
-                                    <h4>Test</h4>
-                                </div>
-                                <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25">
-                                    <span class="icon-room"></span> New York, New York
-                                </div>
-                                <div class="job-listing-meta">
-                                    <span class="badge badge-danger"><?= $vacancyItem['type'] ?></span>
-                                </div>
-                            </div>
-
-                        </li>
-                    <?php endforeach ?>
-
-
-                </ul>
+                <?= TemplateEngine::view(new VacancyList($this->vacancy)) ?>
 
                 <div class="row pagination-wrap">
                     <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
