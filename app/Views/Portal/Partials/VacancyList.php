@@ -46,7 +46,7 @@ class VacancyList extends BaseView
                             </div>
                         </div>
 
-                        <div class="job-listing-about job-listing-about-fix d-sm-flex justify-content-between mx-4">
+                        <div class="job-listing-about job-listing-about-fix d-sm-flex justify-content-between align-items-center mx-4">
                             <div class="job-listing-position flex-w-50 mb-3 mb-sm-0">
                                 <h2><?= $vacancyItem['profession'] ?></h2>
                                 <strong><?= $vacancyItem['company'] ?></strong>
