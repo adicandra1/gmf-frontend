@@ -40,7 +40,7 @@ class RegisterPage extends HtmlSkeleton
                                                     <i class="mdi mdi-account-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="text" name="username" class="form-control form-control-lg border-left-0 <?= (session('errors.username')) ? 'is-invalid' : '' ?>" placeholder="Username" required>
+                                            <input type="text" name="username" class="form-control form-control-lg border-left-0 <?= (session('errors.username')) ? 'is-invalid' : '' ?>" placeholder="Username" value="<?= old('username') ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= session('errors.username') ?>
                                             </div>
@@ -54,7 +54,7 @@ class RegisterPage extends HtmlSkeleton
                                                     <i class="mdi mdi-email-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="email" name="email" class="form-control form-control-lg border-left-0 <?= (session('errors.email')) ? 'is-invalid' : '' ?>" placeholder="Email" required>
+                                            <input type="email" name="email" class="form-control form-control-lg border-left-0 <?= (session('errors.email')) ? 'is-invalid' : '' ?>" placeholder="Email" value="<?= old('email') ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= session('errors.email') ?>
                                             </div>

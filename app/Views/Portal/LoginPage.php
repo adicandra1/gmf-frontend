@@ -41,7 +41,7 @@ class LoginPage extends HtmlSkeleton
                                                     <i class="mdi mdi-account-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control form-control-lg border-left-0 <?= (session('errors.login')) ? 'is-invalid' : '' ?>" id="exampleInputEmail" placeholder="Username" name="login">
+                                            <input type="text" class="form-control form-control-lg border-left-0 <?= (session('errors.login')) ? 'is-invalid' : '' ?>" id="exampleInputEmail" placeholder="Username" name="login" value="<?= old('login') ?>" required>
                                             <div class="invalid-feedback">
                                                 <?= session('errors.login') ?>
                                             </div>
@@ -55,7 +55,7 @@ class LoginPage extends HtmlSkeleton
                                                     <i class="mdi mdi-lock-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="password" class="form-control form-control-lg border-left-0 <?= (session('errors.password')) ? 'is-invalid' : '' ?>" id="exampleInputPassword" placeholder="Password" name="password">
+                                            <input type="password" class="form-control form-control-lg border-left-0 <?= (session('errors.password')) ? 'is-invalid' : '' ?>" id="exampleInputPassword" placeholder="Password" name="password" required>
                                             <div class="invalid-feedback">
                                                 <?= session('errors.password') ?>
                                             </div>
