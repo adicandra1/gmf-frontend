@@ -22978,6 +22978,9 @@ dl li {
     transition: .3s all ease; }
     .job-listings .job-listing:last-child {
       border-bottom: none; }
+    .job-listings .job-listing.job-listing-fix.d-flex {
+      flex-wrap: wrap;
+      --multiplier: calc(476px - 100%); } /** breakpoint : like a @media breakpoint but in container, using flexbox. @see : https://heydonworks.com/article/the-flexbox-holy-albatross/ */
     .job-listings .job-listing a.primary {
       position: absolute;
       width: 100%;
@@ -22987,17 +22990,32 @@ dl li {
       transition: .3s all ease; }
       .job-listings .job-listing a:hover {
         border-left: 7px solid #003679; }
-    .job-listings .job-listing .job-listing-logo {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 150px;
-      flex: 0 0 150px;
-      border-right: 1px solid #eee; }
+    .job-listings .job-listing .job-listing-logo.job-listing-logo-fix {
+      border-right: 1px solid #eee;
+      min-width: calc(150px + 1px); /** image-logo-width + border-width */
+      max-width: 100%; /** full-parent width */
+      flex-basis: calc(var(--multiplier) * 999); } /** breakpoint : like a @media breakpoint but in container, using flexbox. @see : https://heydonworks.com/article/the-flexbox-holy-albatross/ */
       @media (max-width: 575.98px) {
         .job-listings .job-listing .job-listing-logo {
-          border-right: none;
-          -webkit-box-flex: 0;
-          -ms-flex: 0 0 100%;
-          flex: 0 0 100%; } }
+          border-right: none; } }
+    
+    .job-listings .job-listing .job-listing-about.job-listing-about-fix.d-sm-flex {
+      flex-wrap: wrap;
+      flex-grow: 1;
+      max-width: 100%;
+      flex-basis: calc(var(--multiplier) * 999); /** breakpoint : like a @media breakpoint but in container, using flexbox. @see : https://heydonworks.com/article/the-flexbox-holy-albatross/ */
+      --multiplier-inner: calc((476px - 150px) - 100%); } /** inner flexbox breakpoint: parent breakpoint - image-logo-width; */
+
+      .flex-w-50 {
+        max-width: 100%;
+        flex-basis: calc(var(--multiplier-inner) * 999);
+        min-width: 50%; }
+    
+      .flex-w-25 {
+        max-width: 100%;
+        flex-basis: calc(var(--multiplier-inner) * 999);
+        min-width: 25%; }
+
   .job-listings .job-listing-position h2 {
     font-size: 1.2rem;
     margin-bottom: 0; }
@@ -23025,6 +23043,8 @@ dl li {
         background: #003679;
         color: #fff;
         border-color: #003679; }
+
+
 
   .card-profile-image img {
     position: absolute;
@@ -23070,6 +23090,16 @@ dl li {
       height:inherit !important;
       width: 100px !important;
     }
+  }
+
+
+  /* Button size */
+  .btn.btn-1rem {
+    font-size: 1rem;
+  }
+
+  .btn i.size-md {
+    font-size: 1.2rem;
   }
   
 

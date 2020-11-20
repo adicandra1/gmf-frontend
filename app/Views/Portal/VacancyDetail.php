@@ -23,21 +23,26 @@ class VacancyDetail extends AppShell {
 
             <ul class="job-listings mb-5">
 
-                <li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
+                <li class="job-listing job-listing-fix d-flex align-items-center">
 
-                    <div class="job-listing-logo">
-                        <img src="<?= base_url(ViewHelper::LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/job_logo_1.jpg') ?>" alt="Image" class="img-fluid">
+                    <div class="job-listing-logo job-listing-logo-fix">
+                        <div class="image-container d-flex align-items-center justify-content-center" style="height: 150px; width: 150px;">
+                            <img src="<?= base_url(ViewHelper::LANDINGPAGE_ASSETS_RELATIVE_PATH . 'images/job_logo_1.jpg') ?>" alt="Image" class="img-fluid">
+                        </div>
                     </div>
 
-                    <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
-                        <div class="job-listing-position custom-width w-50 mb-3 mb-sm-0">
+                    <div class="job-listing-about job-listing-about-fix d-sm-flex justify-content-between align-items-center mx-4">
+                        <div class="job-listing-position flex-w-50 mb-3 mb-sm-0">
                             <h2><?= $this->vacancy->role ?></h2>
                             <strong><?= $this->vacancy->company ?></strong> - <?= $this->vacancy->location ?>
                             <h5><?= $this->vacancy->rate ?> • ac</h5>
                         </div>
-                        <div class="job-listing-meta">
-                            <a class="btn btn-primary">Apply</a>
+                        <div class="job-listing-meta align-items-center mb-3 mb-sm-0">
+                            <a href="#" class="btn btn-1rem btn-primary btn-icon-text"><i class="mdi mdi-launch btn-icon-prepend"></i>Apply</a>
+                            <button href="#" class="btn btn-1rem btn-outline-primary">Save</button>
+                            <button class="btn btn-sm btn-lg btn-outline-primary btn-icon-text"><i class="mdi mdi-dots-horizontal size-md"></i></button>
                         </div>
+                        
                     </div>
 
                 </li>
