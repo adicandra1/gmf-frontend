@@ -27,7 +27,11 @@ class RegisterPage extends HtmlSkeleton
                                 </div>
                                 <h4>New here?</h4>
                                 <h6 class="font-weight-light">Join us today! It takes only few steps</h6>
-                                <form class="pt-3">
+
+                                <?= view('Myth\Auth\Views\_message_block') ?>
+
+                                <form class="pt-3" action="<?= route_to(RoutesConstant::REGISTER) ?>" method="POST">
+                                    <?= csrf_field() ?>
                                     <div class="form-group">
                                         <label>Username</label>
                                         <div class="input-group">
@@ -36,7 +40,10 @@ class RegisterPage extends HtmlSkeleton
                                                     <i class="mdi mdi-account-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control form-control-lg border-left-0" placeholder="Username">
+                                            <input type="text" name="username" class="form-control form-control-lg border-left-0 <?= (session('errors.username')) ? 'is-invalid' : '' ?>" placeholder="Username" required>
+                                            <div class="invalid-feedback">
+                                                <?= session('errors.username') ?>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -47,7 +54,10 @@ class RegisterPage extends HtmlSkeleton
                                                     <i class="mdi mdi-email-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="email" class="form-control form-control-lg border-left-0" placeholder="Email">
+                                            <input type="email" name="email" class="form-control form-control-lg border-left-0 <?= (session('errors.email')) ? 'is-invalid' : '' ?>" placeholder="Email" required>
+                                            <div class="invalid-feedback">
+                                                <?= session('errors.email') ?>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -59,7 +69,10 @@ class RegisterPage extends HtmlSkeleton
                                                     <i class="mdi mdi-lock-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="password" class="form-control form-control-lg border-left-0 <?= (session('errors.password')) ? 'is-invalid' : '' ?>" id="exampleInputPassword" placeholder="Password" required>
+                                            <div class="invalid-feedback">
+                                                <?= session('errors.password') ?>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -71,14 +84,17 @@ class RegisterPage extends HtmlSkeleton
                                                     <i class="mdi mdi-lock-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Repeat Password">
+                                            <input type="password" name="pass_confirm" class="form-control form-control-lg border-left-0 <?= (session('errors.pass_confirm')) ? 'is-invalid' : '' ?>" id="exampleInputPassword" placeholder="Repeat Password" required>
+                                            <div class="invalid-feedback">
+                                                <?= session('errors.pass_confirm') ?>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="mb-4">
                                         <div class="form-check">
                                             <label class="d-inline form-check-label text-muted">
-                                                <input type="checkbox" class="form-check-input">
+                                                <input type="checkbox" name="agreeToTerms" class="form-check-input" id="inputAgreeToTerms" required>
                                                 I agree to all
                                             </label>
                                             <span><a data-toggle="modal" href="#exampleModal"> Terms and Condition </a> </span>
@@ -101,16 +117,27 @@ class RegisterPage extends HtmlSkeleton
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Agree</button>
+                                                            <button type="button" class="btn btn-primary" id="buttonAgree">Agree</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
 
+                                            <script>
+                                                document.addEventListener("DOMContentLoaded", function() {
+
+                                                    let button = document.querySelector('#exampleModal #buttonAgree');
+                                                    button.addEventListener('click', function() {
+                                                        document.querySelector('#inputAgreeToTerms').checked = true;
+                                                        $('#exampleModal').modal('hide');
+                                                    });
+                                                });
+                                            </script>
+
                                         </div>
                                     </div>
                                     <div class="mt-3">
-                                        <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN UP</a>
+                                        <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN UP</button>
                                     </div>
                                     <div class="text-center mt-4 font-weight-light">
                                         Already have an account? <a href="<?= route_to(RoutesConstant::LOGIN) ?>" class="text-primary">Login</a>

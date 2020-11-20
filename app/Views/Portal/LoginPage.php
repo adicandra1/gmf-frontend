@@ -31,7 +31,8 @@ class LoginPage extends HtmlSkeleton
 
                                 <?= view('Myth\Auth\Views\_message_block') ?>
 
-                                <form class="pt-3" action="<?= route_to('login') ?>" method="POST">
+                                <form class="pt-3" action="<?= route_to(RoutesConstant::LOGIN) ?>" method="POST">
+                                    <?= csrf_field() ?>
                                     <div class="form-group">
                                         <label for="exampleInputEmail">Username</label>
                                         <div class="input-group">
@@ -40,7 +41,7 @@ class LoginPage extends HtmlSkeleton
                                                     <i class="mdi mdi-account-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Username" name="login">
+                                            <input type="text" class="form-control form-control-lg border-left-0 <?= (session('errors.login')) ? 'is-invalid' : '' ?>" id="exampleInputEmail" placeholder="Username" name="login">
                                             <div class="invalid-feedback">
                                                 <?= session('errors.login') ?>
                                             </div>
@@ -54,7 +55,7 @@ class LoginPage extends HtmlSkeleton
                                                     <i class="mdi mdi-lock-outline text-primary"></i>
                                                 </span>
                                             </div>
-                                            <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password" name="password">
+                                            <input type="password" class="form-control form-control-lg border-left-0 <?= (session('errors.password')) ? 'is-invalid' : '' ?>" id="exampleInputPassword" placeholder="Password" name="password">
                                             <div class="invalid-feedback">
                                                 <?= session('errors.password') ?>
                                             </div>
@@ -63,11 +64,11 @@ class LoginPage extends HtmlSkeleton
                                     <div class="my-2 d-flex justify-content-between align-items-center">
                                         <div class="form-check">
                                             <label class="form-check-label text-muted">
-                                                <input type="checkbox" class="form-check-input">
+                                                <input type="checkbox" name="remember" class="form-check-input" <?php if(old('remember')) : ?> checked <?php endif ?>>
                                                 Keep me signed in
                                             </label>
                                         </div>
-                                        <a href="#" class="auth-link text-black">Forgot password?</a>
+                                        <a href="<?= route_to(RoutesConstant::FORGOT_PASS) ?>" class="auth-link text-black">Forgot password?</a>
                                     </div>
                                     <div class="my-3">
                                         <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"><?= lang('Auth.loginAction') ?></a>
