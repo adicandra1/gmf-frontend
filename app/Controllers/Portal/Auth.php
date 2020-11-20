@@ -6,6 +6,7 @@ use App\Libraries\TemplateEngine;
 use App\Views\Portal\LoginPage;
 use App\Views\Portal\RegisterPage;
 use CodeIgniter\Controller;
+use Config\RoutesConstant;
 use Myth\Auth\Authentication\LocalAuthenticator;
 use Myth\Auth\Config\Auth as ConfigAuth;
 use Myth\Auth\Entities\User;
@@ -58,7 +59,7 @@ class Auth extends Controller {
         // is already logged in.
         if ($this->auth->check())
 		{
-			$redirectURL = session('redirect_url') ?? route_to('dashboard');
+			$redirectURL = session('redirect_url') ?? route_to(RoutesConstant::DASHBOARD);
 			unset($_SESSION['redirect_url']);
 
 			return redirect()->to($redirectURL);
@@ -87,7 +88,7 @@ class Auth extends Controller {
 
 		if (! $this->validate($rules))
 		{
-			return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+			return redirect()->route(RoutesConstant::LOGIN)->withInput()->with('errors', $this->validator->getErrors());
 		}
 
 		$login = $this->request->getPost('login');
@@ -100,7 +101,7 @@ class Auth extends Controller {
 		// Try to log them in...
 		if (! $this->auth->attempt([$type => $login, 'password' => $password], $remember))
 		{
-			return redirect()->back()->withInput()->with('error', $this->auth->error() ?? lang('Auth.badAttempt'));
+			return redirect()->route(RoutesConstant::LOGIN)->withInput()->with('error', $this->auth->error() ?? lang('Auth.badAttempt'));
 		}
 
 		// Is the user being forced to reset their password?
@@ -146,7 +147,7 @@ class Auth extends Controller {
         // Check if registration is allowed
 		if (! $this->config->allowRegistration)
 		{
-			return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
+			return redirect()->route(RoutesConstant::REGISTER)->withInput()->with('error', lang('Auth.registerDisabled'));
         }
         
         return TemplateEngine::view(new RegisterPage());
@@ -160,7 +161,7 @@ class Auth extends Controller {
 		// Check if registration is allowed
 		if (! $this->config->allowRegistration)
 		{
-			return redirect()->back()->withInput()->with('error', lang('Auth.registerDisabled'));
+			return redirect()->route(RoutesConstant::REGISTER)->withInput()->with('error', lang('Auth.registerDisabled'));
 		}
 
 		$users = model('UserModel');
@@ -172,11 +173,12 @@ class Auth extends Controller {
 			'email'			=> 'required|valid_email|is_unique[users.email]',
 			'password'	 	=> 'required|strong_password',
 			'pass_confirm' 	=> 'required|matches[password]',
+			'agreeToTerms' => 'required'
 		];
 
 		if (! $this->validate($rules))
 		{
-			return redirect()->back()->withInput()->with('errors', service('validation')->getErrors());
+			return redirect()->route(RoutesConstant::REGISTER)->withInput()->with('errors', service('validation')->getErrors());
 		}
 
 		// Save the user
@@ -192,7 +194,7 @@ class Auth extends Controller {
 
 		if (! $users->save($user))
 		{
-			return redirect()->back()->withInput()->with('errors', $users->errors());
+			return redirect()->route(RoutesConstant::REGISTER)->withInput()->with('errors', $users->errors());
 		}
 
 		if ($this->config->requireActivation !== false)
@@ -202,15 +204,15 @@ class Auth extends Controller {
 
 			if (! $sent)
 			{
-				return redirect()->back()->withInput()->with('error', $activator->error() ?? lang('Auth.unknownError'));
+				return redirect()->route(RoutesConstant::REGISTER)->withInput()->with('error', $activator->error() ?? lang('Auth.unknownError'));
 			}
 
 			// Success!
-			return redirect()->route('login')->with('message', lang('Auth.activationSuccess'));
+			return redirect()->route(RoutesConstant::LOGIN)->with('message', lang('Auth.activationSuccess'));
 		}
 
 		// Success!
-		return redirect()->route('login')->with('message', lang('Auth.registerSuccess'));
+		return redirect()->route(RoutesConstant::LOGIN)->with('message', lang('Auth.registerSuccess'));
     }
     
     //--------------------------------------------------------------------
