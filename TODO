@@ -7,6 +7,7 @@ Bare Minimum Functionality:
 
   Portal:
     Dashboard:
+      ☐ Detect if account is not activated yet
       ☐ Welcome Screen (complete registration)
       ☐ Pending Vacancy (if exist)
       ☐ Vacancy List Summary (with More.. link)
@@ -21,6 +22,9 @@ Bare Minimum Functionality:
       ☐ Apply (require submited necesary details: ktp dll)
       ☐ Database structure
       ☐ Provide with data
+
+      Edit:
+        ☐ WYSWYG edit
 
     Profile:
       Resume:
@@ -80,8 +84,10 @@ Bare Minimum Functionality:
       
     Login:
       ✔ Normal login. @done(20-11-02 21:14)
-      ☐ Keep sign in
+      ✔ Keep sign in @done(20-11-20 13:38)
       ✔ Remove social sign in @done(20-11-20 05:32)
+      ☐ Forgot Password
+      ☐ account activation functionality
     Register:
-      ☐ quick style: username, email, and password.
-      ☐ Terms & Condition
+      ✔ quick style: username, email, and password. @done(20-11-20 13:38)
+      ✔ Terms & Condition @done(20-11-20 13:38)
