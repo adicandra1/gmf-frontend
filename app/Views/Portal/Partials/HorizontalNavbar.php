@@ -93,30 +93,24 @@ class HorizontalNavbar extends BaseView {
             <div class="container">
             <ul class="nav page-navigation">
                 <li class="nav-item">
-                <a class="nav-link" href="<?= base_url() . PORTAL_ROOT_PATH . 'dashboard' ?>"">
+                <a class="nav-link" href="<?= route_to(RoutesConstant::DASHBOARD) ?>"">
                     <i class="mdi mdi-file-document-box menu-icon"></i>
                     <span class="menu-title">Dashboard</span>
                 </a>
                 </li>
                 <li class="nav-item">
-                <a href="<?= base_url() . PORTAL_ROOT_PATH . 'vacancy' ?>" class="nav-link">
+                <a href="<?= route_to(RoutesConstant::VACANCY) ?>" class="nav-link">
                     <i class="mdi mdi-chart-areaspline menu-icon"></i>
                     <span class="menu-title">Vacancy</span>
                     <i class="menu-arrow"></i>
                 </a>
                 </li>
                 <li class="nav-item">
-                <a href="<?= base_url() . PORTAL_ROOT_PATH . 'profile' ?>" class="nav-link">
+                <a href="<?= route_to(RoutesConstant::PROFILE) ?>" class="nav-link">
                     <i class="mdi mdi-cube-outline menu-icon"></i>
                     <span class="menu-title">Profile</span>
                     <i class="menu-arrow"></i>
                 </a>
-                <div class="submenu">
-                    <ul>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url() . PORTAL_ROOT_PATH . 'profile/experience' ?>">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url() . PORTAL_ROOT_PATH . 'profile/education' ?>">Education</a></li>
-                    </ul>
-                </div>
                 </li>
                 
                 
