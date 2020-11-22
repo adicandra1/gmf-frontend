@@ -49,7 +49,7 @@ class VacancyDetail extends AppShell {
 
                 <li class="job-listing d-block p-3 align-items-center">
 
-                    <p class="mb-3"><?= $this->vacancy->dateCreated->format('D M Y') ?> </p>
+                    <p class="mb-3"><i class="mdi mdi-clock pr-2"></i>Posted <?= $this->vacancy->dateCreated->format('D, d M Y') ?> </p>
 
                     <div class="section mb-4">
                         <h3 class="text-header font-weight-bold">About this job</h3>

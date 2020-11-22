@@ -23101,6 +23101,15 @@ dl li {
   .btn i.size-md {
     font-size: 1.2rem;
   }
+
+  /* Vacancy Detail */
+
+  .section .sub-section {
+    padding-left: 1rem;
+    margin-bottom: 0.75rem; } 
+    .section .sub-section h4 {
+      margin-bottom: 0rem;
+    }
   
 
 
