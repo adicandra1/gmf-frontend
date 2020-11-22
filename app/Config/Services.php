@@ -1,5 +1,6 @@
 <?php namespace Config;
 
+use App\Libraries\Doctrine;
 use CodeIgniter\Config\Services as CoreServices;
 
 /**
@@ -27,4 +28,16 @@ class Services extends CoreServices
 	//
 	//        return new \CodeIgniter\Example();
 	//    }
+
+	public static function doctrine( bool $getShared = true ) : Doctrine
+    {
+		if ( $getShared )
+		{
+			return static::getSharedInstance( 'doctrine' );
+		}
+
+		$config = config( 'Doctrine' );
+
+		return new Doctrine( $config );
+	}
 }

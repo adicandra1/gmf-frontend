@@ -15,7 +15,8 @@
 		"psr/log": "^1.1",
 		"guzzlehttp/guzzle": "^7.0",
 		"myth/auth": "dev-develop",
-		"php-di/php-di": "^6.3"
+		"php-di/php-di": "^6.3",
+		"doctrine/orm": "^2.7"
 	},
 	"require-dev": {
 		"codeigniter4/codeigniter4-standard": "^1.0",
